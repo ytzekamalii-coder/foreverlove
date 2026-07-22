@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Для моей любимой ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Georgia', serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#2b0000,#5b0000,#8b0000,#3b0000);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    width:85%;
+    max-width:850px;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(8px);
+    border:2px solid rgba(255,0,0,.4);
+    border-radius:25px;
+    padding:45px;
+    box-shadow:0 0 40px rgba(255,0,0,.4);
+    text-align:center;
+    position:relative;
+    z-index:10;
+}
+
+h1{
+    color:#ff1a1a;
+    font-size:48px;
+    text-shadow:0 0 10px red,
+                0 0 20px crimson,
+                0 0 35px darkred;
+    margin-bottom:25px;
+}
+
+p{
+    color:#ffeaea;
+    font-size:23px;
+    line-height:1.8;
+}
+
+.signature{
+    margin-top:35px;
+    color:#ff4d4d;
+    font-size:30px;
+    font-style:italic;
+}
+
+.heart,.rose{
+    position:absolute;
+    animation:float 12s linear infinite;
+    opacity:.8;
+}
+
+.heart{
+    color:#ff0033;
+    font-size:30px;
+}
+
+.rose{
+    font-size:35px;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(110vh) rotate(0deg);
+    }
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+}
+
+footer{
+    margin-top:20px;
+    color:#ffb3b3;
+    font-size:18px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>❤️ Моей любимой ❤️</h1>
+
+    <p>
+        Любимая моя...<br><br>
+
+        Каждый день рядом с тобой становится самым счастливым в моей жизни.
+        Ты — самое прекрасное, что со мной когда-либо происходило.
+        Твоя улыбка согревает моё сердце, а твой голос делает каждый день особенным.
+
+        <br><br>
+
+        Я хочу, чтобы ты всегда знала:
+        <strong style="color:#ff3b3b;">
+        я люблю тебя всем сердцем.
+        </strong>
+
+        Ты — моя радость, моё вдохновение, моя мечта и моё счастье.
+        Спасибо, что ты есть.
+
+        <br><br>
+
+        Я обещаю любить тебя, беречь тебя и делать всё, чтобы ты улыбалась.
+        Моё сердце принадлежит только тебе.
+    </p>
+
+    <div class="signature">
+        ❤️ Я люблю тебя бесконечно ❤️
+    </div>
+
+    <footer>
+        🌹 Навсегда вместе 🌹
+    </footer>
+</div>
+
+<script>
+function createHeart(){
+    const el=document.createElement("div");
+    const icons=["❤️","🌹","💖","💕","🌺"];
+    el.className=Math.random()>0.5?"heart":"rose";
+    el.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+    el.style.left=Math.random()*100+"vw";
+    el.style.animationDuration=(8+Math.random()*8)+"s";
+    el.style.fontSize=(20+Math.random()*25)+"px";
+    document.body.appendChild(el);
+
+    setTimeout(()=>{
+        el.remove();
+    },17000);
+}
+
+setInterval(createHeart,350);
+
+for(let i=0;i<35;i++){
+    setTimeout(createHeart,i*150);
+}
+</script>
+
+</body>
+</html>
